@@ -18,9 +18,18 @@ public class _01_RobotRace {
 			robots[i].show();
 			robots[i].setSpeed(30);
 		}
-		while (robots[0].getY()>0&&robots[1].getY()>0&&robots[2].getY()>0&&robots[3].getY()>0&&robots[4].getY()>0) {
+		while (robots[0].getX()>0&&robots[1].getX()>0&&robots[2].getX()>0&&robots[3].getX()>0&&robots[4].getX()>0) {
 		for (int i = 0; i < robots.length; i++) {
 			robots[i].move(r.nextInt(50));
+			if (robots[i].getX()<500&&robots[i].getY()<0) {
+				robots[i].turn(90);
+			}
+			if (robots[i].getX()>10000&&robots[i].getY()<0) {
+				robots[i].turn(90);
+			}
+			if (robots[i].getX()>10000&&robots[i].getY()>550) {
+				robots[i].turn(90);
+			}
 		}
 		}
 		int winner=100;
